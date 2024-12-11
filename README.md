@@ -50,7 +50,7 @@ To run DCS Vanilla using Docker, follow these steps:
 
 5. **Initial Configuration your instance of DCS:**
 
-    The first time you you go to [http://localhost:3000](http://localhost:3000) you will get the setup screen so you can configure your instance to your liking. This allso allows you to set up a database and an admin user. For other databases other than SQLite3, you will have to start a docker container for them too. See https://docs.gitea.com/installation/install-with-docker for more details.
+    The first time you you go to [http://localhost:3000](http://localhost:3000) you will get the setup screen so you can configure your instance to your liking. This allso allows you to set up a database and an admin user. For other databases other than SQLite3, you will have to start a docker container for them too. See https://docs.gitea.com/installation/install-with-docker#databases for more details.
 
 6. **Sign-in**
 
@@ -58,10 +58,10 @@ To run DCS Vanilla using Docker, follow these steps:
 
 ## Troubleshooting
 
-If you encounter any issues, check the Docker container logs:
+If you encounter any issues, tail the Docker container logs:
 
 ```sh
-docker logs dcs
+docker logs -f dcs
 ```
 
 ### Stopping the Docker Container
@@ -70,6 +70,7 @@ To stop the Docker container, run:
 ```sh
 docker compose down
 ```
+
 ## Customizing the Docker Compose File
 
 If you need to customize the `docker-compose.yaml` file, follow these steps:
@@ -103,10 +104,19 @@ Template files you can change (which blank out DCS-specific branding, such as ho
 
 For example:
 
+The homepage (removing it puts back the DCS home page you see at https://git.door43.org/about):
+
     nano gitea/gitea/templates/home.tmpl
+
+The top navbar (removing it puts back the `Catalog` and `About DCS` links):
+
+    nano gitea/gitea/templates/base/head_navbar.tmpl
+
+The repo tabs (remove them to put back the `Metadata` and `Preview` tabs):
+
     nano gitea/gitea/templates/custom/extra_tabs.tmpl
 
-Logos and favicon can be changed here in the `assets/img` direction of `gitea/gitea/public`:
+Logo and favicon images (removing them will put back the green and black cirular DCS logo):
 
     cd gitea/gitea/public/assets/img/
 
