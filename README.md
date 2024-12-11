@@ -1,5 +1,16 @@
 # DCS Vanilla: DCS Blanked Out
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installing DCS Vanilla using Docker](#installing-dcs-vanilla-using-docker)
+- [Troubleshooting](#troubleshooting)
+- [Stopping the Docker Container](#stopping-the-docker-container)
+- [Customizing the Docker Compose File](#customizing-the-docker-compose-file)
+- [DCS/Gitea Configuration](#dcsgitea-configuration)
+- [Additional Information](#additional-information)
+- [License](#license)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
@@ -15,7 +26,7 @@ git --version
 docker --version
 docker compose version
 ```
-## Running DCS Vanilla using Docker
+## Installing DCS Vanilla using Docker
 
 To run DCS Vanilla using Docker, follow these steps:
 
@@ -37,11 +48,13 @@ To run DCS Vanilla using Docker, follow these steps:
 4. **Access DCS Vanilla:**
     Open your web browser and go to [http://localhost:3000](http://localhost:3000).
 
-5. **Sign in as root:**
-    ```markdown
-    Username: root
-    Password: password
-    ```
+5. **Initial Configuration your instance of DCS:**
+
+    The first time you you go to [http://localhost:3000](http://localhost:3000) you will get the setup screen so you can configure your instance to your liking. This allso allows you to set up a database and an admin user. For other databases other than SQLite3, you will have to start a docker container for them too. See https://docs.gitea.com/installation/install-with-docker for more details.
+
+6. **Sign-in**
+
+    Once you have filled out the Initial Configuration and installed Gitea, it will sign you in. You're set! Log out to see what the home page looks like (pretty boring!). See [DCS/Gitea Configuration](#dcsgitea-configuration) below for how to customize the home page, nav bar and logo.
 
 ## Troubleshooting
 
