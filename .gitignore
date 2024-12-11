@@ -1,9 +1,9 @@
 # Gitea created files
 gitea/git
 gitea/ssh
-gitea/gitea
-!gitea/gitea/public
-!gitea/gitea/templattes
+gitea/gitea/*
+!gitea/gitea/public/
+!gitea/gitea/templates/
 
 # VS Code
 .history
