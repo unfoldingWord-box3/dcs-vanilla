@@ -1,0 +1,56 @@
+# Gitea created files
+gitea/git
+gitea/ssh
+gitea/gitea
+!gitea/gitea/public
+!gitea/gitea/templattes
+
+# VS Code
+.history
+
+# Logs
+logs/
+*.log
+
+# Node modules (if applicable)
+node_modules/
+
+# Dependency directories
+vendor/
+venv/
+
+# Python specific (if applicable)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.env
+
+# Environment variables
+.env
+
+# Docker specific
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose*.log
+.dockerignore
+
+# Generated files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+*.iml
+
+# Build directories
+dist/
+build/
